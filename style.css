@@ -16,7 +16,7 @@ form {
     margin: 0 auto;
 }
 
-button {
+input[type="submit"] {
     display: block;
     margin: 20px auto;
 }
