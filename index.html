@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>Çoktan Seçmeli Test</h1>
-    <form action="sonuc.php" method="post">
+    <form onsubmit="return false;">
         <h3>Soru 1: Hangi dil web tasarımında kullanılır?</h3>
         <input type="checkbox" name="soru1[]" value="html">HTML<br>
         <input type="checkbox" name="soru1[]" value="css">CSS<br>
@@ -20,7 +20,11 @@
         <input type="checkbox" name="soru2[]" value="php">PHP<br>
 
         <br>
-        <input type="submit" value="Sonucu Göster">
+        <button onclick="sonucuGoster()">Sonucu Göster</button>
     </form>
+
+    <div id="sonuc"></div>
+
+    <script src="script.js"></script>
 </body>
 </html>
