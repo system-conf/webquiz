@@ -24,3 +24,4 @@ function sonucuGoster() {
     var sonucDiv = document.getElementById('sonuc');
     sonucDiv.innerHTML = '<p>Toplam Puan: ' + puan + '</p>';
 }
+s
