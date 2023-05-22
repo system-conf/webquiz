@@ -1,6 +1,6 @@
 function sonucuGoster() {
-    var soru1Cevaplar = document.querySelectorAll('input[name="soru1[]"]:checked');
-    var soru2Cevaplar = document.querySelectorAll('input[name="soru2[]"]:checked');
+    var soru1 = document.getElementsByName('soru1[]');
+    var soru2 = document.getElementsByName('soru2[]');
 
     var dogruCevaplar = {
         soru1: ['html', 'css', 'js'],
@@ -9,21 +9,18 @@ function sonucuGoster() {
 
     var puan = 0;
 
-    if (soru1Cevaplar.length === dogruCevaplar.soru1.length) {
-        var dogru = true;
-        for (var i = 0; i < soru1Cevaplar.length; i++) {
-            if (dogruCevaplar.soru1.indexOf(soru1Cevaplar[i].value) === -1) {
-                dogru = false;
-                break;
-            }
-        }
-        if (dogru) {
+    for (var i = 0; i < soru1.length; i++) {
+        if (soru1[i].checked && dogruCevaplar.soru1.includes(soru1[i].value)) {
             puan++;
         }
     }
 
-    if (soru2Cevaplar.length === dogruCevaplar.soru2.length) {
-        var dogru = true;
-        for (var i = 0; i < soru2Cevaplar.length; i++) {
-            if (dogruCevaplar.soru2.indexOf(soru2Cevaplar[i].value) === -1) {
-               
+    for (var i = 0; i < soru2.length; i++) {
+        if (soru2[i].checked && dogruCevaplar.soru2.includes(soru2[i].value)) {
+            puan++;
+        }
+    }
+
+    var sonucDiv = document.getElementById('sonuc');
+    sonucDiv.innerHTML = '<p>Toplam Puan: ' + puan + '</p>';
+}
